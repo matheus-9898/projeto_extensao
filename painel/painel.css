@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+input,
+select{
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+input:focus,
+select:focus{
+    outline: 0px;
+}
+header{
+    background-color: cornflowerblue;
+    height: 50px;
+    width: 100%;
+}
+header .centerHeader{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+header .centerHeader nav{
+    display: flex;
+    gap: 60px;
+}
+header .centerHeader nav > div{
+    display: flex;
+    gap: 20px;
+}
+header .centerHeader nav a{
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+header .centerHeader nav a:hover{
+    scale: 1.07;
+}
+
+.fundoModal{
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.contCadEntrada,
+.contCadSaida{
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contCadEntrada > span,
+.contCadSaida > span{
+    text-align: center;
+    font-weight: 600;
+}
+.contCadEntrada > div,
+.contCadSaida > div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+.contCadEntrada > div > input,
+.contCadSaida > div > input{
+    width: 100%;
+}
+.contCadEntrada > div > select,
+.contCadSaida > div > select{
+    width: 100%;
+}
+.contCadEntrada > div > div,
+.contCadSaida > div > div{
+    display: flex;
+    gap: 10px;
+}
+.contCadEntrada .botoes,
+.contCadSaida .botoes{
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+.contCadEntrada .botoes input,
+.contCadSaida .botoes input,
+.contCadEntrada .botoes button,
+.contCadSaida .botoes button{
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0px;
+    color: white;
+    font-weight: 600;
+}
+.contCadEntrada .botoes input,
+.contCadSaida .botoes input{
+    background-color: cornflowerblue;
+}
+.contCadEntrada .botoes button,
+.contCadSaida .botoes button{
+    background-color: grey;
+}
+
+.contCadEntrada > div input.categoria{
+    display: none;
+}
+.contCadEntrada > div > div{
+    display: flex;
+    justify-content: space-between;
+}
+.contCadEntrada > div > div .contRadioCat{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 2px;
+}
+.contCadEntrada > div > div .contRadioCat .radioCat{
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.379);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contCadEntrada > div > div .contRadioCat .radioCat svg{
+    display: none;
+}
+
+main{
+    padding: 0 10px;
+}
+main .centerMain{
+    padding: 10px 0px;
+    min-height: calc(100vh - 50px);
+    margin: 0 auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-areas: "histEntradas histSaidas"
+    "relProdutos relProdutos"
+    "relProdutos relProdutos";
+    gap: 20px;
+}
+main .centerMain > *{
+    background-color: rgb(240,240,240);
+    border-radius: 5px;
+    padding: 10px;
+}
+main .centerMain .contHistEntradas{
+    grid-area: histEntradas;
+}
+main .centerMain .contHistSaidas{
+    grid-area: histSaidas;
+}
+main .centerMain .contRelProdutos{
+    grid-area: relProdutos;
+}
+main .centerMain h2{
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+main .centerMain div:nth-child(1) h2{
+    color: green;
+    border-bottom: 1px solid green;
+}
+main .centerMain div:nth-child(2) h2{
+    color: red;
+    border-bottom: 1px solid red;
+}
+main .centerMain div:nth-child(3) h2{
+    color: cornflowerblue;
+    border-bottom: 1px solid cornflowerblue;
+}
+main .centerMain .contHistEntradas table,
+main .centerMain .contHistSaidas table,
+main .centerMain .contRelProdutos table{
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width:770px) {
+    main .centerMain{
+        display: flex;
+        flex-direction: column;
+    }
+}
